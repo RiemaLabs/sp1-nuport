@@ -1,4 +1,4 @@
-@Nuport/=lib/Nuport/src/
+@nuport/=lib/Nuport/src/
 @openzeppelin-upgradeable/=lib/Succinctx/contracts/lib/openzeppelin-contracts-upgradeable/
 @openzeppelin/=lib/Succinctx/contracts/lib/openzeppelin-contracts/contracts/
 @succinctx/=lib/Succinctx/contracts/src/
