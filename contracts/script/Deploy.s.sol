@@ -27,19 +27,21 @@ contract DeployScript is BaseScript {
 
         SP1Nuport lightClient;
         ISP1Verifier verifier = ISP1Verifier(
-            vm.envOr("SP1_VERIFIER_ADDRESS", 0x3B6041173B80E77f038f3F2C0f9744f04837185e)
+            vm.envOr("SP1_VERIFIER_ADDRESS", 0x036E25171eAf8E1c8248C079DC9498952e960032)
         );
 
         // Deploy the SP1Nuport contract.
         SP1Nuport lightClientImpl =
-            new SP1Nuport{salt: bytes32(vm.envBytes("CREATE2_SALT"))}();
+            new SP1Nuport();
         lightClient = SP1Nuport(
             address(
-                new ERC1967Proxy{salt: bytes32(vm.envBytes("CREATE2_SALT"))}(
+                new ERC1967Proxy(
                     address(lightClientImpl), ""
                 )
             )
         );
+
+	console.log("Deployed SP1Nuport at address: %s", address(lightClient));
 
         // Initialize the SP1 Nuport light client.
         lightClient.initialize(
@@ -51,6 +53,7 @@ contract DeployScript is BaseScript {
                 verifier: address(verifier)
             })
         );
+       console.log("Initialized SP1Nuport at address: %s", address(lightClient));
 
         return address(lightClient);
     }
