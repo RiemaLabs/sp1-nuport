@@ -20,7 +20,7 @@ contract SP1Nuport is ISP1Nuport, IDAOracle, TimelockedUpgradeable {
 
     /// @notice The maximum number of blocks that can be skipped in a single request.
     /// @dev Reflects the maximum data commitment size you can request from a Nubit node.
-    uint64 public constant DATA_COMMITMENT_MAX = 1000;
+    uint64 public constant DATA_COMMITMENT_MAX = 600;
 
     /// @notice Nonce for proof events. Must be incremented sequentially.
     uint256 public state_proofNonce;

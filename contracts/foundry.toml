@@ -28,6 +28,7 @@ base = "${RPC_BASE}"
 base_sepolia = "${RPC_BASE_SEPOLIA}"
 scroll = "${RPC_SCROLL}"
 scroll_sepolia = "${RPC_SCROLL_SEPOLIA}"
+local = "${RPC_LOCAL}"
 
 [etherscan]
 mainnet = { key = "${ETHERSCAN_API_KEY_MAINNET}", url = "${ETHERSCAN_API_URL_MAINNET}" }
